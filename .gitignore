@@ -1,0 +1,19 @@
+# Java / Maven
+target/
+*.log
+
+# Node / React
+frontend/node_modules/
+frontend/dist/
+*.env
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Build artifacts
+*.class
+*.jar

@@ -1,0 +1,212 @@
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    background: radial-gradient(circle at 50% 20%, #141a40 0%, #0b1020 70%);
+    font-family: system-ui, -apple-system, "Inter", sans-serif;
+    color: #e6ecff;
+}
+
+/* ===== Force Viewport Center ===== */
+body,
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Keeps everything centered horizontally, but allows vertical scroll */
+.app {
+    min-height: 100vh;
+    display: block;
+    padding: 72px 16px 48px;
+    /* extra top padding prevents top clip */
+    box-sizing: border-box;
+}
+
+
+.shell {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    /* true horizontal center */
+    text-align: center;
+}
+
+
+/* ===== Header ===== */
+.glow-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #dbe8ff;
+    text-shadow: 0 0 10px #4c8bff, 0 0 20px #4c8bff, 0 0 40px #4c8bff;
+    margin-bottom: 0.5rem;
+}
+
+.sub {
+    font-size: 1.2rem;
+    color: #aab4d4;
+    margin-bottom: 2rem;
+}
+
+/* ===== Card Row (Horizontal Layout) ===== */
+.content {
+    display: flex;
+    flex-direction: row;
+    /* <— ensures side-by-side layout */
+    justify-content: center;
+    /* centers the pair horizontally */
+    align-items: flex-start;
+    /* aligns tops evenly */
+    gap: 2rem;
+    /* space between the cards */
+    width: 100%;
+    max-width: 1000px;
+    flex-wrap: nowrap;
+    /* prevent wrapping unless small screen */
+    margin-top: 1rem;
+}
+
+
+/* ===== Card Styling ===== */
+.card {
+    background: #121831;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 460px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Form Controls ===== */
+input[type="file"],
+textarea {
+    width: 100%;
+    background: #0f1430;
+    color: #e6ecff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 0.5rem;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4c8bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease;
+    margin-top: 0.8rem;
+}
+
+button:hover {
+    background-color: #3b75d8;
+}
+
+/* ===== Upload Status ===== */
+.upload-status {
+    font-size: 0.9rem;
+    color: #78ffb9;
+    margin-top: 0.5rem;
+}
+
+/* ===== Answer Box ===== */
+.answer-box {
+    background: #101632;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1rem;
+    text-align: left;
+    margin-top: 1rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    color: #e1e7ff;
+    font-size: 0.95rem;
+}
+
+/* Scrollable answer box */
+.answer {
+    margin-top: 12px;
+    background: #101632;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 14px 16px;
+    text-align: left;
+    line-height: 1.6;
+    color: #e1e7ff;
+
+    /* key: contain height & allow inner scroll */
+    max-height: 420px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+/* Prevent Chrome scroll anchoring from nudging the viewport upward */
+.answer {
+    overflow-anchor: none;
+}
+
+/* Also disable anchoring on the whole content row for safety */
+.content {
+    overflow-anchor: none;
+}
+
+/* Optional: smooth long text reading */
+.answer p {
+    margin: .5em 0;
+}
+
+.answer ul,
+.answer ol {
+    padding-left: 1.25rem;
+    margin: .5em 0;
+}
+
+.answer pre {
+    background: #0b132a;
+    padding: 12px;
+    border-radius: 8px;
+    overflow: auto;
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .glow-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 800px) {
+    .content {
+        flex-wrap: wrap;
+        justify-content: center;
+        /* allow stacking on smaller screens */
+    }
+}
