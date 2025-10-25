@@ -56,12 +56,12 @@ Built with **Java Spring Boot**, **React**, and **PostgreSQL**.
 ## Example Screenshots
 
 ### Home Page
-![Home](assets/home.png)
+![Home](upload.png)
 
 ### Upload Example
-![Upload](assets/upload.png)
+![Upload](upload.png)
 
 ### AI Answer Example
-![Answer](assets/answer.png)
+![Answer](answer.png)
 
 
