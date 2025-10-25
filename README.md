@@ -56,7 +56,7 @@ Built with **Java Spring Boot**, **React**, and **PostgreSQL**.
 ## Example Screenshots
 
 ### Home Page
-![Home](upload.png)
+![Home](home.png)
 
 ### Upload Example
 ![Upload](upload.png)
